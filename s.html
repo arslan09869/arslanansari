@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stack Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            color: #171717;
+            padding: 2rem;
+        }
+
+        .skills-container {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Desktop Grid Layout */
+        .desktop-grid {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .desktop-grid {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+            }
+        }
+
+        .row-top {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid #d4d4d4;
+            height: clamp(200px, 20vw, 400px);
+        }
+
+        .row-bottom {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            height: clamp(200px, 15vw, 400px);
+        }
+
+        /* Mobile Grid Layout */
+        .mobile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-grid {
+                display: none;
+            }
+        }
+
+        /* Grid Item Base Styles */
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            transition: all 300ms ease;
+            overflow: hidden;
+        }
+
+        .grid-item:hover {
+            background-color: #171717;
+            z-index: 10;
+        }
+
+        .grid-item img {
+            z-index: 10;
+            transition: all 300ms ease;
+        }
+
+        .grid-item:hover img {
+            filter: brightness(0) invert(1);
+            transform: scale(1.1);
+        }
+
+        /* Desktop Grid Borders */
+        .row-top .grid-item:not(:last-child) {
+            border-right: 1px solid #d4d4d4;
+        }
+
+        .row-bottom .grid-item:not(:last-child) {
+            border-right: 1px solid #d4d4d4;
+        }
+
+        /* Mobile Grid Borders */
+        .mobile-grid .grid-item {
+            height: clamp(200px, 20vw, 400px);
+        }
+
+        .mobile-grid .grid-item:nth-child(odd) {
+            border-right: 1px solid #d4d4d4;
+        }
+
+        .mobile-grid .grid-item:not(:nth-last-child(-n+2)) {
+            border-bottom: 1px solid #d4d4d4;
+        }
+
+        /* Image Sizes */
+        .img-react {
+            width: 90px;
+            height: 90px;
+        }
+
+        .img-nextjs {
+            width: 150px;
+            height: 150px;
+        }
+
+        .img-typescript {
+            width: 70px;
+            height: 70px;
+        }
+
+        .img-gsap {
+            width: 80px;
+            height: 80px;
+        }
+
+        .img-motion {
+            width: 80px;
+            height: 80px;
+        }
+
+        .img-tailwind {
+            width: 70px;
+            height: 70px;
+        }
+
+        .img-contentful {
+            width: 50px;
+            height: 50px;
+        }
+
+        .img-supabase {
+            width: 50px;
+            height: 50px;
+        }
+
+        .img-vercel {
+            width: 90px;
+            height: 90px;
+        }
+
+        .img-figma {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* Mobile Image Sizes */
+        @media (max-width: 1023px) {
+            .img-react {
+                width: 70px;
+                height: 70px;
+            }
+
+            .img-nextjs {
+                width: 100px;
+                height: 100px;
+                filter: invert(1);
+            }
+
+            .img-typescript {
+                width: 64px;
+                height: 64px;
+            }
+        }
+
+        /* Highlight Effect (Desktop only) */
+        .highlight {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #171717;
+            pointer-events: none;
+            transition: all 300ms ease;
+            opacity: 0;
+        }
+
+        @media (min-width: 640px) {
+            .highlight {
+                display: block;
+            }
+        }
+
+        /* Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="skills-container">
+        <!-- Desktop Grid (lg and above) -->
+        <div class="desktop-grid">
+            <!-- Top Row: 3 columns -->
+            <div class="row-top">
+                <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit React website">
+                    <img alt="React" loading="lazy" width="90" height="90" decoding="async" 
+                         class="img-react" src="/assets/images/react-logo.svg">
+                </a>
+                <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit Next.js website">
+                    <img alt="Next.js" loading="lazy" width="150" height="150" decoding="async" 
+                         class="img-nextjs" src="/assets/images/nextjs-logotype-light-background.svg">
+                </a>
+                <a href="https://www.typescriptlang.org" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit TypeScript website">
+                    <img alt="TypeScript" loading="lazy" width="70" height="70" decoding="async" 
+                         class="img-typescript" src="/assets/images/typescript-logo.svg">
+                </a>
+            </div>
+
+            <!-- Bottom Row: 7 columns -->
+            <div class="row-bottom">
+                <a href="https://gsap.com/" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit GSAP website">
+                    <img alt="GSAP" loading="lazy" width="80" height="80" decoding="async" 
+                         class="img-gsap" src="/assets/images/gsap-black.svg">
+                </a>
+                <a href="https://motion.dev/" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit Motion website">
+                    <img alt="Motion" loading="lazy" width="80" height="80" decoding="async" 
+                         class="img-motion" src="/assets/images/motion.svg">
+                </a>
+                <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit TailwindCSS website">
+                    <img alt="TailwindCSS" loading="lazy" width="70" height="70" decoding="async" 
+                         class="img-tailwind" src="/assets/images/tailwindcss-logo.svg">
+                </a>
+                <a href="https://www.contentful.com/" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit Contentful website">
+                    <img alt="Contentful" loading="lazy" width="50" height="50" decoding="async" 
+                         class="img-contentful" src="/assets/images/contentful-logo.svg">
+                </a>
+                <a href="https://supabase.com/" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit Supabase website">
+                    <img alt="Supabase" loading="lazy" width="50" height="50" decoding="async" 
+                         class="img-supabase" src="/assets/images/supabase-logo.svg">
+                </a>
+                <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit Vercel website">
+                    <img alt="Vercel" loading="lazy" width="90" height="90" decoding="async" 
+                         class="img-vercel" src="/assets/images/vercel-logotype-light.svg">
+                </a>
+                <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" 
+                   class="grid-item" aria-label="Visit Figma website">
+                    <img alt="Figma" loading="lazy" width="60" height="60" decoding="async" 
+                         class="img-figma" src="/assets/images/contentful-logo.svg">
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Grid (below lg) -->
+        <div class="mobile-grid">
+            <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit React website">
+                <img alt="React" loading="lazy" width="70" height="70" decoding="async" 
+                     class="img-react" src="/assets/images/react-logo.svg">
+            </a>
+            <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit Next.js website">
+                <img alt="Next.js" loading="lazy" width="100" height="100" decoding="async" 
+                     class="img-nextjs" src="/assets/images/nextjs-logotype-light-background.svg">
+            </a>
+            <a href="https://www.typescriptlang.org" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit TypeScript website">
+                <img alt="TypeScript" loading="lazy" width="64" height="64" decoding="async" 
+                     class="img-typescript" src="/assets/images/typescript-logo.svg">
+            </a>
+            <a href="https://gsap.com/" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit GSAP website">
+                <img alt="GSAP" loading="lazy" width="80" height="80" decoding="async" 
+                     class="img-gsap" src="/assets/images/gsap-black.svg">
+            </a>
+            <a href="https://motion.dev/" target="_blank" 
+               class="grid-item">
+                <img alt="Motion" loading="lazy" width="80" height="80" decoding="async" 
+                     class="img-motion" src="/assets/images/motion.svg">
+            </a>
+            <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit TailwindCSS website">
+                <img alt="TailwindCSS" loading="lazy" width="70" height="70" decoding="async" 
+                     class="img-tailwind" src="/assets/images/tailwindcss-logo.svg">
+            </a>
+            <a href="https://www.contentful.com/" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit TailwindCSS website">
+                <img alt="Contentful" loading="lazy" width="50" height="50" decoding="async" 
+                     class="img-contentful" src="/assets/images/contentful-logo.svg">
+            </a>
+            <a href="https://supabase.com/" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit Supabase website">
+                <img alt="Supabase" loading="lazy" width="50" height="50" decoding="async" 
+                     class="img-supabase" src="/assets/images/supabase-logo.svg">
+            </a>
+            <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit Vercel website">
+                <img alt="Vercel" loading="lazy" width="90" height="90" decoding="async" 
+                     class="img-vercel" src="/assets/images/vercel-logotype-light.svg">
+            </a>
+            <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" 
+               class="grid-item" aria-label="Visit Figma website">
+                <img alt="Figma" loading="lazy" width="60" height="60" decoding="async" 
+                     class="img-figma" src="/assets/images/contentful-logo.svg">
+            </a>
+        </div>
+
+        <!-- Highlight overlay (desktop only) -->
+        <div class="highlight" style="transform: translate(340px, 0px); width: 340px; height: 200px;"></div>
+    </div>
+
+    <script>
+        // Highlight effect that follows the mouse on desktop
+        const highlight = document.querySelector('.highlight');
+        const gridItems = document.querySelectorAll('.grid-item');
+        const container = document.querySelector('.skills-container');
+
+        if (window.innerWidth >= 640) {
+            gridItems.forEach(item => {
+                item.addEventListener('mouseenter', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const containerRect = container.getBoundingClientRect();
+                    
+                    highlight.style.transform = `translate(${rect.left - containerRect.left}px, ${rect.top - containerRect.top}px)`;
+                    highlight.style.width = `${rect.width}px`;
+                    highlight.style.height = `${rect.height}px`;
+                    highlight.style.opacity = '1';
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    highlight.style.opacity = '0';
+                });
+            });
+
+            container.addEventListener('mouseleave', function() {
+                highlight.style.opacity = '0';
+            });
+        }
+    </script>
+</body>
+</html>
