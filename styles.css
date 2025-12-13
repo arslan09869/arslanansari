@@ -766,7 +766,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 7rem 1rem;
+  padding: 2rem 1rem;
 }
 
 @media (min-width: 1024px) {
