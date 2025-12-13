@@ -326,6 +326,7 @@ img {
     position: relative;
     bottom: auto;
     left: auto;
+    top: 8%;
     width: 100%;
     padding: 1em;
     gap: 2em;
@@ -345,9 +346,12 @@ img {
   }
 
   .cover-img {
-    position: relative;
+    /* position: relative; */
+    position: absolute;
     right: auto;
-    bottom: auto;
+    bottom: 1vh;
+    /* bottom: auto;
+    top: 8%; */
     width: 100%;
     height: 280px;
     margin: 1em;
@@ -360,7 +364,7 @@ img {
     bottom: auto;
     flex-direction: row;
     justify-content: center;
-    padding: 1em;
+    /* padding: 1em; */
     gap: 0.5em;
   }
 
@@ -449,10 +453,6 @@ img {
   }
 }
 
-.after{
-  /* display: none; */
-}
-
 /* about section */
 
 .about {
@@ -475,12 +475,6 @@ img {
   line-height: 1.25;
 }
 
-/* .about h3 .line span {
-  display: flex;
-  transform: translateY(100%);
-  position: relative;
-  will-change: transform;
-} */
 .about-img {
   width: 50%;
   padding: 2vw;
@@ -650,7 +644,7 @@ img {
   }
 
   .grid-row:nth-child(1) {
-    border-bottom: none;
+    /* border-bottom: none; */
   }
 
   .grid-item {
@@ -663,18 +657,17 @@ img {
 
   /* Remove right border from last column */
   .grid-item:nth-child(2n) {
-    border-right: none;
+    /* border-right: none; */
   }
 
   /* Remove bottom border from last row */
   .grid-item:nth-last-child(-n + 2):nth-child(odd),
   .grid-item:nth-last-child(-n + 2):nth-child(even) {
-    border-bottom: none;
+    /* border-bottom: none; */
   }
 
-  /* For odd number of items, remove border from last item */
   .grid-item:last-child:nth-child(odd) {
-    border-bottom: none;
+    /* border-bottom: none; */
   }
 
   .grid-item img {
@@ -690,7 +683,6 @@ img {
   /* Mobile highlight styling */
   .highlight {
     background: rgba(0, 0, 0, 0.9);
-    border-radius: 12px;
   }
 }
 

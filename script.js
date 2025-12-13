@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".about",
       start: "top 20%",
       end: "top 30%",
-      markers: true,
+      // markers: true,
       toggleActions: "play none none none",
     },
   });
