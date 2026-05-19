@@ -10,7 +10,8 @@
 
 @font-face {
   font-family: "PPNeueMontreal";
-  src: url("./assets/fonts/PPNeueMontreal-Regular.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/PPNeueMontreal-Regular.woff2") format("woff2"),
     url("./assets/fonts/PPNeueMontreal-Regular.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -18,7 +19,8 @@
 
 @font-face {
   font-family: "GrandBold";
-  src: url("./assets/fonts/GrandBold.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/GrandBold.woff2") format("woff2"),
     url("./assets/fonts/GrandBold.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -595,7 +597,9 @@ img {
   height: 100px;
   width: 100px;
   object-fit: contain;
-  transition: filter 0.3s ease, transform 0.3s ease;
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 
 .grid-item.active img {
@@ -609,7 +613,10 @@ img {
   background: #000;
   pointer-events: none;
   z-index: 1;
-  transition: transform 0.25s ease, width 0.25s ease, height 0.25s ease,
+  transition:
+    transform 0.25s ease,
+    width 0.25s ease,
+    height 0.25s ease,
     background-color 0.25s ease;
 }
 
@@ -1120,4 +1127,148 @@ img {
 .arrow-icon {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+/* Journey and contacts */
+
+.journey-section {
+  padding: 8rem 5vw;
+  border-top: 1px solid #e5e5e5;
+}
+
+.journey-title {
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 700;
+  margin-bottom: 4rem;
+  letter-spacing: -0.03em;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1.5px solid #111;
+  margin-left: 4rem;
+  padding-left: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 2rem;
+  padding: 0 0 3.5rem 2.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #111;
+}
+
+.timeline-year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #999;
+  padding-top: 2px;
+}
+
+.timeline-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #555;
+  max-width: 50ch;
+}
+
+/* ── Contact Section ── */
+.contact-section {
+  border-top: 1px solid #e5e5e5;
+  padding: 8rem 5vw 6rem;
+}
+
+.contact-inner {
+  max-width: 700px;
+}
+
+.contact-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 1.5rem;
+}
+
+.contact-heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+}
+
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #111;
+  padding: 0.85rem 1.75rem;
+  border-radius: 100px;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  margin-bottom: 2.5rem;
+}
+
+.contact-cta:hover {
+  background: #333;
+  transform: translateX(4px);
+}
+
+.contact-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+.contact-links a:hover {
+  border-color: #111;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .timeline {
+    margin-left: 1rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
 }
