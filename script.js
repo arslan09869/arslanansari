@@ -169,6 +169,9 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .set(".after", {
       display: "block",
+    }).set(".revealers", {
+      display: "none",
+      pointerEvents: "none",
     });
 
   // skills js
