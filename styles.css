@@ -933,7 +933,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 @media (min-width: 1024px) {
@@ -1591,7 +1591,7 @@ img {
 /* Responsive */
 @media (max-width: 640px) {
   .journey-section {
-    padding: 3.5rem 5vw 0;
+    padding: 3rem 5vw 0;
   }
 
   .timeline-item {
@@ -1600,12 +1600,21 @@ img {
   }
 
   .timeline-item:not(:last-child)::after {
-    left: 10px;
+    left: -18px;
   }
 
   .tl-dot {
     width: 11px;
     height: 11px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .timeline-year {
+    font-size: 10px;
+    position: relative;
+    left: -195px;
+    bottom: 0;
   }
 
   .tl-icon-wrap {
@@ -1725,7 +1734,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 @media (min-width: 1024px) {
