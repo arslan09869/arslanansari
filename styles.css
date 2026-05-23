@@ -2048,3 +2048,8 @@ a {
   width: 13px;
   height: 13px;
 }
+
+*::selection{
+  background: #2ee3ff;
+  color: #fff;
+}
